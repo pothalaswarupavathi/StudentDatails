@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class Student {
+	private int rollNum;
+	private String stduName;
+	private int mark1;
+	private int mark2;
+	private int mark3;
+	private int totalMarks;
+
+	public void setStduDetails(int rollNum, String stduName, int mark1, int mark2, int mark3) {
+		this.rollNum = rollNum;
+		this.stduName = stduName;
+		this.mark1 = mark1;
+		this.mark2 = mark2;
+		this.mark3 = mark3;
+
+	}
+
+	public void calculateTotal() {
+		totalMarks = mark1 + mark2 + mark3;
+	}
+
+	public void displayStudDetails() {
+		System.out.println("Student RollNumber" + rollNum);
+		System.out.println("Student Name" + stduName);
+		System.out.println("Student Total marks" + totalMarks);
+	}
+}
+
+public class StudentDamo {
+	public static void main(String args[]) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter student rollNumber");
+		int rollNum = in.nextInt();
+		System.out.println("Enter Student name");
+		String stduName = in.next();
+		System.out.println("Enter Student mark1");
+		int mark1 = in.nextInt();
+		System.out.println("Enter student mark2");
+		int mark2 = in.nextInt();
+		System.out.println("Enter student mark3");
+		int mark3 = in.nextInt();
+
+		Student s = new Student();
+		s.setStduDetails(rollNum, stduName, mark1, mark2, mark3);
+		s.calculateTotal();
+		s.displayStudDetails();
+
+	}
+
+}
+
